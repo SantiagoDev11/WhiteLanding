@@ -1,0 +1,738 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat', sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#F7F9FC;
+    color:#2d2d2d;
+    overflow-x:hidden;
+}
+
+/* FONDOS ALTERNADOS */
+
+.section:nth-child(even){
+    background:#ffffff;
+}
+
+.section:nth-child(odd){
+    background:#EEF3F8;
+}
+
+/* HERO */
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+    background:url("/hero-bg1.png");
+    background-size:cover;
+    background-position:center top;
+    background-repeat:no-repeat;
+
+    padding-top:60px;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,.05);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    width:100%;
+    max-width:1500px;
+
+    text-align:center;
+
+    padding:20px;
+}
+
+/* LOGO */
+
+.logo{
+    width:650px;
+    max-width:95%;
+    margin-bottom:30px;
+}
+
+/* TITULO PRINCIPAL */
+
+.hero h1{
+    font-size:72px;
+    font-weight:800;
+    color:#17324d;
+    line-height:1.1;
+    margin-bottom:25px;
+
+    text-shadow:
+    0 2px 20px rgba(255,255,255,.8);
+}
+
+.hero p{
+    max-width:900px;
+    margin:auto;
+
+    font-size:22px;
+    line-height:1.9;
+
+    color:#2d2d2d;
+}
+
+/* BOTONES */
+
+.buttons{
+    margin-top:40px;
+}
+
+.btn,
+.btn-outline{
+
+    display:inline-block;
+
+    padding:18px 42px;
+
+    margin:10px;
+
+    border:none;
+    border-radius:60px;
+
+    background:#17324d;
+    color:white;
+
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.btn:hover,
+.btn-outline:hover{
+    background:#21476b;
+    transform:translateY(-4px);
+}
+
+/* SECCIONES */
+
+.section{
+    padding:120px 8%;
+}
+
+/* QUIÉNES SOMOS */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.placeholder{
+    height:500px;
+    background:linear-gradient(135deg,#dfe8f1,#eef3f8);
+
+    border-radius:30px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#7d8793;
+    font-size:24px;
+}
+
+.about-text h2{
+    font-size:55px;
+    color:#17324d;
+    margin-bottom:30px;
+}
+
+.about-text p{
+    color:#555;
+    line-height:2;
+    font-size:18px;
+}
+
+/* TITULOS GENERALES */
+
+.title-center{
+    text-align:center;
+    font-size:55px;
+    color:#17324d;
+    margin-bottom:70px;
+}
+/* ========================= */
+/* TARJETAS GENERALES */
+/* ========================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:30px;
+
+    padding:45px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    border-top:6px solid #4FA3D9;
+
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+}
+
+.card h3{
+    color:#17324d;
+    font-size:30px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.card p{
+    color:#555;
+    line-height:2;
+    font-size:17px;
+}
+
+/* ========================= */
+/* IMÁGENES DE TARJETAS */
+/* ========================= */
+
+.card-image{
+    width:100%;
+    height:220px;
+
+    background:linear-gradient(
+        135deg,
+        #dce6ef,
+        #eef3f8
+    );
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+}
+
+/* ========================= */
+/* BOTÓN VER MÁS */
+/* ========================= */
+
+.btn-proyecto{
+
+    margin-top:25px;
+
+    border:none;
+    cursor:pointer;
+
+    background:#17324d;
+    color:white;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    font-size:16px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.btn-proyecto:hover{
+    background:#21476b;
+}
+
+/* ========================= */
+/* CONTENIDO EXPANDIBLE */
+/* ========================= */
+
+.contenido-proyecto{
+    margin-top:30px;
+    padding-top:25px;
+
+    border-top:1px solid #e4e4e4;
+
+    animation:fadeIn .4s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.contenido-proyecto ul{
+    margin-top:20px;
+    margin-left:20px;
+}
+
+.contenido-proyecto li{
+    margin-bottom:12px;
+    line-height:1.8;
+}
+
+/* ========================= */
+/* EQUIPO */
+/* ========================= */
+
+.team-card{
+    text-align:center;
+}
+
+.team-photo{
+    width:150px;
+    height:150px;
+
+    margin:auto;
+    margin-bottom:25px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        #dce6ef,
+        #eef3f8
+    );
+
+    border:5px solid #4FA3D9;
+}
+
+.cargo{
+    display:block;
+
+    color:#4FA3D9;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+}
+
+/* ========================= */
+/* LISTAS */
+/* ========================= */
+
+.card ul{
+    margin-left:20px;
+    margin-top:20px;
+}
+
+.card li{
+    margin-bottom:12px;
+    line-height:1.8;
+}
+/* ========================= */
+/* TARJETAS GENERALES */
+/* ========================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:30px;
+
+    padding:45px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    border-top:6px solid #4FA3D9;
+
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+}
+
+.card h3{
+    color:#17324d;
+    font-size:30px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.card p{
+    color:#555;
+    line-height:2;
+    font-size:17px;
+}
+
+/* ========================= */
+/* IMÁGENES DE TARJETAS */
+/* ========================= */
+
+.card-image{
+    width:100%;
+    height:220px;
+
+    background:linear-gradient(
+        135deg,
+        #dce6ef,
+        #eef3f8
+    );
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+}
+
+/* ========================= */
+/* BOTÓN VER MÁS */
+/* ========================= */
+
+.btn-proyecto{
+
+    margin-top:25px;
+
+    border:none;
+    cursor:pointer;
+
+    background:#17324d;
+    color:white;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    font-size:16px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.btn-proyecto:hover{
+    background:#21476b;
+}
+
+/* ========================= */
+/* CONTENIDO EXPANDIBLE */
+/* ========================= */
+
+.contenido-proyecto{
+    margin-top:30px;
+    padding-top:25px;
+
+    border-top:1px solid #e4e4e4;
+
+    animation:fadeIn .4s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.contenido-proyecto ul{
+    margin-top:20px;
+    margin-left:20px;
+}
+
+.contenido-proyecto li{
+    margin-bottom:12px;
+    line-height:1.8;
+}
+
+/* ========================= */
+/* EQUIPO */
+/* ========================= */
+
+.team-card{
+    text-align:center;
+}
+
+.team-photo{
+    width:150px;
+    height:150px;
+
+    margin:auto;
+    margin-bottom:25px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        #dce6ef,
+        #eef3f8
+    );
+
+    border:5px solid #4FA3D9;
+}
+
+.cargo{
+    display:block;
+
+    color:#4FA3D9;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+}
+
+/* ========================= */
+/* LISTAS */
+/* ========================= */
+
+.card ul{
+    margin-left:20px;
+    margin-top:20px;
+}
+
+.card li{
+    margin-bottom:12px;
+    line-height:1.8;
+}
+/* ========================= */
+/* REDES SOCIALES */
+/* ========================= */
+
+.social-section{
+    background: linear-gradient(135deg,#eef4fb,#ffffff);
+    padding:120px 8%;
+    text-align:center;
+}
+
+.social-section h2{
+    font-size:55px;
+    color:#17324d;
+    margin-bottom:20px;
+}
+
+.social-text{
+    max-width:700px;
+    margin:auto;
+    color:#666;
+    line-height:1.8;
+    margin-bottom:50px;
+}
+
+.social-links{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.social-card{
+    width:220px;
+    background:white;
+    border-radius:25px;
+    padding:30px 20px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+
+    text-decoration:none;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.social-card svg{
+    font-size:42px;
+}
+
+.social-card span{
+    font-size:18px;
+    font-weight:700;
+}
+
+.social-card:hover{
+    transform:translateY(-8px);
+}
+
+/* INSTAGRAM */
+
+.instagram{
+    color:#E1306C;
+}
+
+/* FACEBOOK */
+
+.facebook{
+    color:#1877F2;
+}
+
+/* YOUTUBE */
+
+.youtube{
+    color:#FF0000;
+}
+
+/* ========================= */
+/* BOTÓN FLOTANTE WHATSAPP */
+/* ========================= */
+
+.whatsapp-float{
+
+    position:fixed;
+
+    bottom:25px;
+    right:25px;
+
+    width:75px;
+    height:75px;
+
+    background:#25D366;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+
+    font-size:40px;
+
+    text-decoration:none;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    z-index:99999;
+
+    transition:.3s;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.1);
+}
+
+/* ========================= */
+/* DONACIONES */
+/* ========================= */
+
+.payment-card{
+    background:rgba(255,255,255,.1);
+    border-radius:30px;
+
+    padding:30px;
+
+    display:flex;
+    align-items:center;
+
+    gap:25px;
+
+    min-width:350px;
+}
+
+.payment-icon{
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#17324d;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:30px;
+}
+
+.nequi-icon{
+    background:#E4007C;
+    color:white;
+}
+.donaciones{
+    background: linear-gradient(135deg,#17324d,#244d75);
+    color:white;
+
+    padding:120px 20px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.donaciones h2{
+    font-size:55px;
+    margin-bottom:20px;
+    width:100%;
+}
+
+.donaciones > p{
+    max-width:700px;
+    margin-bottom:50px;
+}
+.donation-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:30px;
+
+    width:100%;
+}
+footer{
+    background:#17324d;
+    color:white;
+
+    padding:90px 20px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+footer h2{
+    font-size:45px;
+    margin-bottom:25px;
+}
+
+footer p{
+    margin-top:10px;
+    line-height:1.8;
+}

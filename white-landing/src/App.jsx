@@ -26,7 +26,7 @@ function App() {
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <img
-            src="/WhiteLandig/logo1.png"
+            src="/WhiteLanding/logo1.png"
             alt="WHITE International Ministry"
             className="logo"
           />

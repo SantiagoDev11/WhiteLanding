@@ -4,25 +4,30 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Montserrat', sans-serif;
+    font-family:'Montserrat',sans-serif;
     scroll-behavior:smooth;
 }
 
+:root{
+    --bg:#dfeeff;
+    --bg2:#cde3ff;
+    --card:#f2f8ff;
+    --blue:#1d4f91;
+    --blue2:#2d73d6;
+    --blue3:#4fa3ff;
+    --text:#14304d;
+    --white:#ffffff;
+}
+
 body{
-    background:#F7F9FC;
+    background:#eaf6ff;
     color:#2d2d2d;
     overflow-x:hidden;
 }
 
-/* FONDOS ALTERNADOS */
-
-.section:nth-child(even){
-    background:#ffffff;
-}
-
-.section:nth-child(odd){
-    background:#EEF3F8;
-}
+/* ========================= */
+/* HERO */
+/* ========================= */
 
 /* HERO */
 
@@ -33,66 +38,106 @@ body{
 
     display:flex;
     justify-content:center;
-    align-items:flex-start;
+    align-items:center;
 
-    background:url("/hero-bg1.png");
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.15),
+            rgba(255,255,255,0.15)
+        ),
+        url("/hero-bg1.png");
+
     background-size:cover;
-    background-position:center top;
+    background-position:center;
     background-repeat:no-repeat;
 
-    padding-top:60px;
+    overflow:hidden;
 }
 
 .hero-overlay{
     position:absolute;
     inset:0;
-    background:rgba(255,255,255,.05);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7,35,75,0.10) 0%,
+            rgba(7,35,75,0.15) 50%,
+            rgba(7,35,75,0.25) 100%
+        );
+
+    z-index:1;
 }
 
 .hero-content{
     position:relative;
     z-index:2;
-
     width:100%;
-    max-width:1500px;
-
+    max-width:1200px;
     text-align:center;
-
-    padding:20px;
+    padding:40px 20px;
 }
-
-/* LOGO */
-
-.logo{
-    width:650px;
-    max-width:95%;
-    margin-bottom:30px;
-}
-
-/* TITULO PRINCIPAL */
 
 .hero h1{
     font-size:72px;
     font-weight:800;
-    color:#17324d;
+    color:#0f2744;
+
     line-height:1.1;
     margin-bottom:25px;
 
     text-shadow:
-    0 2px 20px rgba(255,255,255,.8);
+        0 2px 10px rgba(255,255,255,0.8),
+        0 0 20px rgba(255,255,255,0.6);
 }
 
 .hero p{
-    max-width:900px;
+    max-width:850px;
     margin:auto;
 
     font-size:22px;
-    line-height:1.9;
+    line-height:1.8;
 
-    color:#2d2d2d;
+    color:#17324d;
+    font-weight:500;
+
+    text-shadow:
+        0 1px 10px rgba(255,255,255,0.8);
 }
 
+.hero-content{
+    max-width:1200px;
+    padding:40px;
+}
+
+.logo{
+    width:600px;
+    max-width:90%;
+
+    margin-bottom:30px;
+
+    filter:
+        drop-shadow(0 10px 25px rgba(0,0,0,.20))
+        drop-shadow(0 0 20px rgba(255,255,255,.50));
+}
+
+.hero h1{
+    font-size:72px;
+    color:var(--blue);
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:850px;
+    margin:auto;
+    font-size:22px;
+    line-height:1.8;
+}
+
+/* ========================= */
 /* BOTONES */
+/* ========================= */
 
 .buttons{
     margin-top:40px;
@@ -100,568 +145,325 @@ body{
 
 .btn,
 .btn-outline{
-
     display:inline-block;
 
-    padding:18px 42px;
-
+    padding:18px 40px;
     margin:10px;
 
-    border:none;
-    border-radius:60px;
-
-    background:#17324d;
-    color:white;
-
+    border-radius:50px;
     text-decoration:none;
-    font-size:18px;
-    font-weight:600;
 
+    font-weight:700;
     transition:.3s;
 }
 
-.btn:hover,
-.btn-outline:hover{
-    background:#21476b;
+.btn{
+    background:var(--blue2);
+    color:white;
+}
+
+.btn:hover{
+    background:var(--blue);
     transform:translateY(-4px);
 }
 
-/* SECCIONES */
-
-.section{
-    padding:120px 8%;
+.btn-outline{
+    background:white;
+    color:var(--blue);
 }
 
+.btn-outline:hover{
+    transform:translateY(-4px);
+}
+
+/* ========================= */
+/* SECCIONES */
+/* ========================= */
+
+.section{
+    padding:110px 8%;
+}
+
+.section:nth-child(even){
+    background:#DCECF8;
+}
+
+.section:nth-child(odd){
+    background:#C9E2F5;
+}
+.title-center{
+    text-align:center;
+    font-size:55px;
+    margin-bottom:60px;
+    color:var(--blue);
+}
+/* ========================= */
 /* QUIÉNES SOMOS */
+/* ========================= */
 
 .about{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:80px;
+    gap:60px;
     align-items:center;
 }
 
+.about-image{
+    width:100%;
+}
+
 .placeholder{
-    height:500px;
-    background:linear-gradient(135deg,#dfe8f1,#eef3f8);
+    height:450px;
 
     border-radius:30px;
+
+    background:linear-gradient(
+        135deg,
+        #b9d8ff,
+        #e9f4ff
+    );
 
     display:flex;
     justify-content:center;
     align-items:center;
 
-    color:#7d8793;
     font-size:24px;
+    font-weight:600;
+
+    color:var(--blue);
 }
 
 .about-text h2{
     font-size:55px;
-    color:#17324d;
-    margin-bottom:30px;
+    color:var(--blue);
+    margin-bottom:25px;
 }
 
 .about-text p{
-    color:#555;
+    font-size:18px;
     line-height:2;
+    margin-bottom:20px;
+}
+
+/* ========================= */
+/* TARJETAS */
+/* ========================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:var(--card);
+
+    border-radius:30px;
+
+    padding:40px;
+
+    box-shadow:
+    0 12px 30px rgba(29,79,145,.10);
+
+    border-top:6px solid var(--blue3);
+
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 18px 40px rgba(29,79,145,.15);
+}
+
+.card h3{
+    color:var(--blue);
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.card p{
+    line-height:1.9;
+}
+
+.card ul{
+    margin-top:15px;
+    margin-left:20px;
+}
+
+.card li{
+    margin-bottom:10px;
+    line-height:1.8;
+}
+
+/* ========================= */
+/* IMAGENES DE PROYECTOS */
+/* ========================= */
+
+.card-image{
+    width:100%;
+    height:220px;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+
+    background:linear-gradient(
+        135deg,
+        #b7d7ff,
+        #edf7ff
+    );
+}
+
+/* ========================= */
+/* BOTÓN VER MÁS */
+/* ========================= */
+
+.btn-proyecto{
+    margin-top:20px;
+
+    border:none;
+
+    background:var(--blue2);
+    color:white;
+
+    padding:14px 30px;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.btn-proyecto:hover{
+    background:var(--blue);
+}
+
+/* ========================= */
+/* CONTENIDO EXPANDIBLE */
+/* ========================= */
+
+.contenido-proyecto{
+    margin-top:25px;
+    padding-top:20px;
+
+    border-top:1px solid rgba(0,0,0,.1);
+
+    animation:fadeIn .4s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ========================= */
+/* EQUIPO */
+/* ========================= */
+
+.team-card{
+    text-align:center;
+}
+
+.team-photo{
+    width:140px;
+    height:140px;
+
+    margin:auto;
+    margin-bottom:25px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        #b7d7ff,
+        #edf7ff
+    );
+
+    border:5px solid var(--blue3);
+}
+
+.cargo{
+    display:block;
+
+    color:var(--blue2);
+
+    font-weight:700;
+
+    margin-bottom:15px;
+}
+/* ========================= */
+/* DONACIONES */
+/* ========================= */
+
+.donaciones{
+    background:linear-gradient(
+        135deg,
+        #1d4f91,
+        #2d73d6
+    );
+
+    color:white;
+
+    text-align:center;
+
+    padding:120px 8%;
+}
+
+.donaciones h2{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.donaciones p{
     font-size:18px;
 }
 
-/* TITULOS GENERALES */
+.donation-box{
+    margin-top:50px;
 
-.title-center{
-    text-align:center;
-    font-size:55px;
-    color:#17324d;
-    margin-bottom:70px;
-}
-/* ========================= */
-/* TARJETAS GENERALES */
-/* ========================= */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:white;
-    border-radius:30px;
-
-    padding:45px;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-    border-top:6px solid #4FA3D9;
-
-    transition:.35s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 50px rgba(0,0,0,.12);
-}
-
-.card h3{
-    color:#17324d;
-    font-size:30px;
-    font-weight:700;
-    margin-bottom:20px;
-}
-
-.card p{
-    color:#555;
-    line-height:2;
-    font-size:17px;
-}
-
-/* ========================= */
-/* IMÁGENES DE TARJETAS */
-/* ========================= */
-
-.card-image{
-    width:100%;
-    height:220px;
-
-    background:linear-gradient(
-        135deg,
-        #dce6ef,
-        #eef3f8
-    );
-
-    border-radius:20px;
-
-    margin-bottom:25px;
-}
-
-/* ========================= */
-/* BOTÓN VER MÁS */
-/* ========================= */
-
-.btn-proyecto{
-
-    margin-top:25px;
-
-    border:none;
-    cursor:pointer;
-
-    background:#17324d;
-    color:white;
-
-    padding:15px 30px;
-
-    border-radius:50px;
-
-    font-size:16px;
-    font-weight:600;
-
-    transition:.3s;
-}
-
-.btn-proyecto:hover{
-    background:#21476b;
-}
-
-/* ========================= */
-/* CONTENIDO EXPANDIBLE */
-/* ========================= */
-
-.contenido-proyecto{
-    margin-top:30px;
-    padding-top:25px;
-
-    border-top:1px solid #e4e4e4;
-
-    animation:fadeIn .4s ease;
-}
-
-@keyframes fadeIn{
-
-    from{
-        opacity:0;
-        transform:translateY(-10px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
-.contenido-proyecto ul{
-    margin-top:20px;
-    margin-left:20px;
-}
-
-.contenido-proyecto li{
-    margin-bottom:12px;
-    line-height:1.8;
-}
-
-/* ========================= */
-/* EQUIPO */
-/* ========================= */
-
-.team-card{
-    text-align:center;
-}
-
-.team-photo{
-    width:150px;
-    height:150px;
-
-    margin:auto;
-    margin-bottom:25px;
-
-    border-radius:50%;
-
-    background:linear-gradient(
-        135deg,
-        #dce6ef,
-        #eef3f8
-    );
-
-    border:5px solid #4FA3D9;
-}
-
-.cargo{
-    display:block;
-
-    color:#4FA3D9;
-
-    font-weight:700;
-
-    margin-bottom:20px;
-}
-
-/* ========================= */
-/* LISTAS */
-/* ========================= */
-
-.card ul{
-    margin-left:20px;
-    margin-top:20px;
-}
-
-.card li{
-    margin-bottom:12px;
-    line-height:1.8;
-}
-/* ========================= */
-/* TARJETAS GENERALES */
-/* ========================= */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:white;
-    border-radius:30px;
-
-    padding:45px;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-    border-top:6px solid #4FA3D9;
-
-    transition:.35s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 50px rgba(0,0,0,.12);
-}
-
-.card h3{
-    color:#17324d;
-    font-size:30px;
-    font-weight:700;
-    margin-bottom:20px;
-}
-
-.card p{
-    color:#555;
-    line-height:2;
-    font-size:17px;
-}
-
-/* ========================= */
-/* IMÁGENES DE TARJETAS */
-/* ========================= */
-
-.card-image{
-    width:100%;
-    height:220px;
-
-    background:linear-gradient(
-        135deg,
-        #dce6ef,
-        #eef3f8
-    );
-
-    border-radius:20px;
-
-    margin-bottom:25px;
-}
-
-/* ========================= */
-/* BOTÓN VER MÁS */
-/* ========================= */
-
-.btn-proyecto{
-
-    margin-top:25px;
-
-    border:none;
-    cursor:pointer;
-
-    background:#17324d;
-    color:white;
-
-    padding:15px 30px;
-
-    border-radius:50px;
-
-    font-size:16px;
-    font-weight:600;
-
-    transition:.3s;
-}
-
-.btn-proyecto:hover{
-    background:#21476b;
-}
-
-/* ========================= */
-/* CONTENIDO EXPANDIBLE */
-/* ========================= */
-
-.contenido-proyecto{
-    margin-top:30px;
-    padding-top:25px;
-
-    border-top:1px solid #e4e4e4;
-
-    animation:fadeIn .4s ease;
-}
-
-@keyframes fadeIn{
-
-    from{
-        opacity:0;
-        transform:translateY(-10px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
-.contenido-proyecto ul{
-    margin-top:20px;
-    margin-left:20px;
-}
-
-.contenido-proyecto li{
-    margin-bottom:12px;
-    line-height:1.8;
-}
-
-/* ========================= */
-/* EQUIPO */
-/* ========================= */
-
-.team-card{
-    text-align:center;
-}
-
-.team-photo{
-    width:150px;
-    height:150px;
-
-    margin:auto;
-    margin-bottom:25px;
-
-    border-radius:50%;
-
-    background:linear-gradient(
-        135deg,
-        #dce6ef,
-        #eef3f8
-    );
-
-    border:5px solid #4FA3D9;
-}
-
-.cargo{
-    display:block;
-
-    color:#4FA3D9;
-
-    font-weight:700;
-
-    margin-bottom:20px;
-}
-
-/* ========================= */
-/* LISTAS */
-/* ========================= */
-
-.card ul{
-    margin-left:20px;
-    margin-top:20px;
-}
-
-.card li{
-    margin-bottom:12px;
-    line-height:1.8;
-}
-/* ========================= */
-/* REDES SOCIALES */
-/* ========================= */
-
-.social-section{
-    background: linear-gradient(135deg,#eef4fb,#ffffff);
-    padding:120px 8%;
-    text-align:center;
-}
-
-.social-section h2{
-    font-size:55px;
-    color:#17324d;
-    margin-bottom:20px;
-}
-
-.social-text{
-    max-width:700px;
-    margin:auto;
-    color:#666;
-    line-height:1.8;
-    margin-bottom:50px;
-}
-
-.social-links{
     display:flex;
     justify-content:center;
     gap:30px;
     flex-wrap:wrap;
 }
 
-.social-card{
-    width:220px;
-    background:white;
-    border-radius:25px;
-    padding:30px 20px;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:18px;
-
-    text-decoration:none;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-    transition:.3s;
-}
-
-.social-card svg{
-    font-size:42px;
-}
-
-.social-card span{
-    font-size:18px;
-    font-weight:700;
-}
-
-.social-card:hover{
-    transform:translateY(-8px);
-}
-
-/* INSTAGRAM */
-
-.instagram{
-    color:#E1306C;
-}
-
-/* FACEBOOK */
-
-.facebook{
-    color:#1877F2;
-}
-
-/* YOUTUBE */
-
-.youtube{
-    color:#FF0000;
-}
-
-/* ========================= */
-/* BOTÓN FLOTANTE WHATSAPP */
-/* ========================= */
-
-.whatsapp-float{
-
-    position:fixed;
-
-    bottom:25px;
-    right:25px;
-
-    width:75px;
-    height:75px;
-
-    background:#25D366;
-
-    border-radius:50%;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    color:white;
-
-    font-size:40px;
-
-    text-decoration:none;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
-
-    z-index:99999;
-
-    transition:.3s;
-}
-
-.whatsapp-float:hover{
-    transform:scale(1.1);
-}
-
-/* ========================= */
-/* DONACIONES */
-/* ========================= */
-
 .payment-card{
-    background:rgba(255,255,255,.1);
-    border-radius:30px;
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:25px;
 
     padding:30px;
 
+    min-width:320px;
+
     display:flex;
     align-items:center;
+    gap:20px;
 
-    gap:25px;
+    transition:.3s;
+}
 
-    min-width:350px;
+.payment-card:hover{
+    transform:translateY(-6px);
 }
 
 .payment-icon{
-
     width:70px;
     height:70px;
 
@@ -669,7 +471,7 @@ body{
 
     background:white;
 
-    color:#17324d;
+    color:#1d4f91;
 
     display:flex;
     justify-content:center;
@@ -682,49 +484,107 @@ body{
     background:#E4007C;
     color:white;
 }
-.donaciones{
-    background: linear-gradient(135deg,#17324d,#244d75);
-    color:white;
 
-    padding:120px 20px;
+/* ========================= */
+/* REDES SOCIALES */
+/* ========================= */
+
+.social-section{
+    background:linear-gradient(
+        180deg,
+        #dff0ff,
+        #cfe8ff
+    );
+
+    text-align:center;
+
+    padding:120px 8%;
+}
+
+.social-section h2{
+    font-size:55px;
+    color:#1d4f91;
+    margin-bottom:20px;
+}
+
+.social-text{
+    max-width:800px;
+
+    margin:0 auto 50px auto;
+
+    line-height:1.8;
+
+    color:#35506b;
+}
+
+.social-links{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.social-card{
+    width:250px;
+    min-height:220px;
+
+    background:#f6fbff;
+
+    border-radius:30px;
+
+    padding:35px 20px;
 
     display:flex;
     flex-direction:column;
-    align-items:center;
-    text-align:center;
-}
-
-.donaciones h2{
-    font-size:55px;
-    margin-bottom:20px;
-    width:100%;
-}
-
-.donaciones > p{
-    max-width:700px;
-    margin-bottom:50px;
-}
-.donation-box{
-    display:flex;
     justify-content:center;
     align-items:center;
-    flex-wrap:wrap;
-    gap:30px;
 
-    width:100%;
+    text-decoration:none;
+
+    box-shadow:
+    0 10px 30px rgba(29,79,145,.10);
+
+    transition:.3s;
 }
+
+.social-card:hover{
+    transform:translateY(-8px);
+}
+
+.social-card svg{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.social-card span{
+    font-size:22px;
+    font-weight:700;
+}
+
+.instagram{
+    color:#E1306C;
+}
+
+.facebook{
+    color:#1877F2;
+}
+
+.youtube{
+    color:#FF0000;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
 footer{
-    background:#17324d;
+    background:#1d4f91;
+
     color:white;
+
+    text-align:center;
 
     padding:90px 20px;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
 }
 
 footer h2{
@@ -735,4 +595,144 @@ footer h2{
 footer p{
     margin-top:10px;
     line-height:1.8;
+}
+
+/* ========================= */
+/* WHATSAPP */
+/* ========================= */
+
+.whatsapp-float{
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:75px;
+    height:75px;
+
+    border-radius:50%;
+
+    background:#25D366;
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:40px;
+
+    box-shadow:
+    0 12px 30px rgba(37,211,102,.35);
+
+    z-index:9999;
+
+    transition:.3s;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.1);
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:768px){
+
+    .hero{
+        min-height:auto;
+        padding:80px 20px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .logo{
+        width:280px;
+    }
+
+    .buttons{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .btn,
+    .btn-outline{
+        width:100%;
+        max-width:320px;
+    }
+
+    .section{
+        padding:80px 6%;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .placeholder{
+        height:280px;
+    }
+
+    .title-center,
+    .about-text h2,
+    .donaciones h2,
+    .social-section h2{
+        font-size:36px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        padding:30px;
+    }
+
+    .payment-card{
+        min-width:100%;
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .social-card{
+        width:100%;
+        max-width:330px;
+    }
+
+    footer h2{
+        font-size:34px;
+    }
+
+    .whatsapp-float{
+        width:65px;
+        height:65px;
+        font-size:34px;
+    }
+}
+.about-photo{
+    width:100%;
+    height:500px;
+
+    object-fit:cover;
+
+    border-radius:30px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.15);
+
+    transition:.4s;
+}
+
+.about-photo:hover{
+    transform:scale(1.02);
 }

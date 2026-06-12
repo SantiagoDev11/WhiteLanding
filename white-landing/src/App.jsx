@@ -53,7 +53,7 @@ function App() {
       <section className="section about">
       <div className="about-image">
         <img
-          src="/public/prueba/3.png"
+          src="Whitelandig/public/prueba/3.png"
           alt="Fundación White"
           className="about-photo"
         />
@@ -136,7 +136,7 @@ function App() {
         <div className="cards">
           <div className="card team-card">
         <img
-              src="/public/1.png"
+              src="white-landing/public/1.png"
               alt="/public/1.png"
               className="team-photo"
             />

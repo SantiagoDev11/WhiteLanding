@@ -25,8 +25,8 @@ function App() {
       <header className="hero">
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <img
-            src="/WhiteLanding/logo1.png"
+        <img
+            src={`${import.meta.env.BASE_URL}logo1.png`}
             alt="WHITE International Ministry"
             className="logo"
           />

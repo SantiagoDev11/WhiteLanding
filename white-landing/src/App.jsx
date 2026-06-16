@@ -25,11 +25,11 @@ function App() {
       <header className="hero">
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <img
-            src="/logo1.png"
-            alt="WHITE International Ministry"
-            className="logo"
-          />
+        <img
+          src={`${import.meta.env.BASE_URL}logo1.png`}
+          alt="WHITE International Ministry"
+          className="logo"
+        />
           <h1>
             Transformando vidas mediante el amor de Dios
           </h1>
@@ -53,9 +53,9 @@ function App() {
       <section className="section about">
       <div className="about-image">
         <img
-          src="/public/prueba/3.png"
-          alt="Fundación White"
-          className="about-photo"
+          src={`${import.meta.env.BASE_URL}3.png`}
+          alt="WHITE International Ministry"
+          className="logo"
         />
       </div>
         <div className="about-text">
@@ -136,7 +136,7 @@ function App() {
         <div className="cards">
           <div className="card team-card">
         <img
-              src="/public/1.png"
+              src="/WhiteLanding/public/1.png"
               alt="/public/1.png"
               className="team-photo"
             />
@@ -365,6 +365,9 @@ function App() {
         <p>Manizales - Caldas - Colombia</p>
         <p>+57 322 613 6237</p>
         <p>whiteinternationalministry@gmail.com</p>
+        <div className="copyright">
+          © 2026 WHITE International Ministry. Todos los derechos reservados.
+        </div>
       </footer>
 
       {/* BOTÓN FLOTANTE WHATSAPP */}

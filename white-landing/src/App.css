@@ -1,355 +1,277 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Montserrat',sans-serif;
-    scroll-behavior:smooth;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Montserrat',sans-serif;
 }
 
-:root{
-    --bg:#dfeeff;
-    --bg2:#cde3ff;
-    --card:#f2f8ff;
-    --blue:#1d4f91;
-    --blue2:#2d73d6;
-    --blue3:#4fa3ff;
-    --text:#14304d;
-    --white:#ffffff;
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-    background:#eaf6ff;
-    color:#2d2d2d;
-    overflow-x:hidden;
+  background:#dbe8f6;
+  color:#123252;
+  overflow-x:hidden;
 }
 
-/* ========================= */
-/* HERO */
-/* ========================= */
+img{
+  max-width:100%;
+  display:block;
+}
 
-/* HERO */
+a{
+  text-decoration:none;
+}
 
+.section{
+  padding:120px 8%;
+}
+
+.section:nth-child(even){
+  background:#dbe8f6;
+}
+
+.section:nth-child(odd){
+  background:#cfe0f1;
+}
+/*HEROOOO*/
 .hero{
-    position:relative;
-    min-height:100vh;
-    width:100%;
+  min-height:100vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
-    background:
-        linear-gradient(
-            rgba(255,255,255,0.15),
-            rgba(255,255,255,0.15)
-        ),
-        url("/hero-bg1.png");
+  position:relative;
 
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+  background:
+  linear-gradient(rgba(13,55,93,.45),rgba(13,55,93,.45)),
+  url("/hero-bg1.png");
 
-    overflow:hidden;
+  background-size:cover;
+  background-position:center;
+
+  overflow:hidden;
 }
 
-.hero-overlay{
-    position:absolute;
-    inset:0;
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
 
-    background:
-        linear-gradient(
-            180deg,
-            rgba(7,35,75,0.10) 0%,
-            rgba(7,35,75,0.15) 50%,
-            rgba(7,35,75,0.25) 100%
-        );
-
-    z-index:1;
+  background:
+  radial-gradient(circle at top left,
+  rgba(255,255,255,.15),
+  transparent 40%);
 }
 
 .hero-content{
-    position:relative;
-    z-index:2;
-    width:100%;
-    max-width:1200px;
-    text-align:center;
-    padding:40px 20px;
-}
+  position:relative;
+  z-index:2;
+  text-align:center;
+  max-width:1000px;
+  padding:20px;
 
-.hero h1{
-    font-size:72px;
-    font-weight:800;
-    color:#0f2744;
-
-    line-height:1.1;
-    margin-bottom:25px;
-
-    text-shadow:
-        0 2px 10px rgba(255,255,255,0.8),
-        0 0 20px rgba(255,255,255,0.6);
-}
-
-.hero p{
-    max-width:850px;
-    margin:auto;
-
-    font-size:22px;
-    line-height:1.8;
-
-    color:#17324d;
-    font-weight:500;
-
-    text-shadow:
-        0 1px 10px rgba(255,255,255,0.8);
-}
-
-.hero-content{
-    max-width:1200px;
-    padding:40px;
+  animation:fadeUp 1s ease;
 }
 
 .logo{
-    width:600px;
-    max-width:90%;
-
-    margin-bottom:30px;
-
-    filter:
-        drop-shadow(0 10px 25px rgba(0,0,0,.20))
-        drop-shadow(0 0 20px rgba(255,255,255,.50));
+  width:550px;
+  margin:auto;
+  margin-bottom:35px;
 }
 
 .hero h1{
-    font-size:72px;
-    color:var(--blue);
-    font-weight:800;
-    margin-bottom:20px;
+  color:white;
+  font-size:70px;
+  font-weight:800;
+  line-height:1.1;
+  margin-bottom:30px;
 }
 
 .hero p{
-    max-width:850px;
-    margin:auto;
-    font-size:22px;
-    line-height:1.8;
+  color:#edf5ff;
+  font-size:21px;
+  line-height:1.9;
 }
-
-/* ========================= */
-/* BOTONES */
-/* ========================= */
-
+/*BOTONESSSSS*/
 .buttons{
-    margin-top:40px;
+  margin-top:45px;
+
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
 }
 
 .btn,
 .btn-outline{
-    display:inline-block;
 
-    padding:18px 40px;
-    margin:10px;
+  padding:18px 40px;
 
-    border-radius:50px;
-    text-decoration:none;
+  border-radius:60px;
 
-    font-weight:700;
-    transition:.3s;
+  background:#1f6cb5;
+  color:white;
+
+  font-weight:700;
+
+  transition:.4s;
 }
 
-.btn{
-    background:var(--blue2);
-    color:white;
-}
-
-.btn:hover{
-    background:var(--blue);
-    transform:translateY(-4px);
-}
-
-.btn-outline{
-    background:white;
-    color:var(--blue);
-}
-
+.btn:hover,
 .btn-outline:hover{
-    transform:translateY(-4px);
-}
 
-/* ========================= */
-/* SECCIONES */
-/* ========================= */
+  transform:
+  translateY(-6px)
+  scale(1.03);
 
-.section{
-    padding:110px 8%;
-}
+  background:#2783da;
 
-.section:nth-child(even){
-    background:#DCECF8;
+  box-shadow:
+  0 15px 35px rgba(39,131,218,.4);
 }
+/*Animación global*/
+@keyframes fadeUp{
 
-.section:nth-child(odd){
-    background:#C9E2F5;
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
 }
-.title-center{
-    text-align:center;
-    font-size:55px;
-    margin-bottom:60px;
-    color:var(--blue);
-}
-/* ========================= */
-/* QUIÉNES SOMOS */
-/* ========================= */
+/*QUIENES SOMOSSS*/
 
 .about{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:60px;
+    gap:80px;
     align-items:center;
 }
 
-.about-image{
-    width:100%;
-}
-
-.placeholder{
-    height:450px;
-
+.about-image img{
     border-radius:30px;
-
-    background:linear-gradient(
-        135deg,
-        #b9d8ff,
-        #e9f4ff
-    );
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-size:24px;
-    font-weight:600;
-
-    color:var(--blue);
 }
 
 .about-text h2{
     font-size:55px;
-    color:var(--blue);
+    color:#17324d;
     margin-bottom:25px;
 }
 
 .about-text p{
-    font-size:18px;
     line-height:2;
-    margin-bottom:20px;
 }
-
-/* ========================= */
-/* TARJETAS */
-/* ========================= */
-
+/*TITULOSSS*/
+.title-center{
+    text-align:center;
+    font-size:55px;
+    color:#17324d;
+    margin-bottom:70px;
+}
+/*TARJETASS*/
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
 }
 
 .card{
-    background:var(--card);
-
+    background:#CFE8FF;
     border-radius:30px;
-
     padding:40px;
 
+    border-top:6px solid #5FA8D3;
+
     box-shadow:
-    0 12px 30px rgba(29,79,145,.10);
+    0 10px 30px rgba(0,0,0,.08);
 
-    border-top:6px solid var(--blue3);
-
-    transition:.35s;
+    transition:.3s;
 }
 
 .card:hover{
     transform:translateY(-8px);
-
-    box-shadow:
-    0 18px 40px rgba(29,79,145,.15);
 }
 
 .card h3{
-    color:var(--blue);
+    color:#17324d;
     font-size:28px;
-    margin-bottom:15px;
+    margin-bottom:20px;
 }
 
 .card p{
     line-height:1.9;
+    color:#32404d;
 }
 
 .card ul{
-    margin-top:15px;
     margin-left:20px;
+    margin-top:20px;
 }
 
 .card li{
     margin-bottom:10px;
-    line-height:1.8;
 }
-
-/* ========================= */
-/* IMAGENES DE PROYECTOS */
-/* ========================= */
-
+/*IMAGENES DE TARJETAS*/
 .card-image{
     width:100%;
     height:220px;
 
     border-radius:20px;
 
-    margin-bottom:25px;
-
     background:linear-gradient(
         135deg,
-        #b7d7ff,
-        #edf7ff
+        #A9D6FF,
+        #D9ECFF
     );
+
+    margin-bottom:25px;
+
+    overflow:hidden;
 }
 
-/* ========================= */
-/* BOTÓN VER MÁS */
-/* ========================= */
-
+.card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+/*BOTON DE VER MAS*/
 .btn-proyecto{
-    margin-top:20px;
+
+    margin-top:25px;
 
     border:none;
-
-    background:var(--blue2);
-    color:white;
-
-    padding:14px 30px;
-
-    border-radius:40px;
-
     cursor:pointer;
 
-    font-weight:700;
+    background:#1B4965;
+    color:white;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    font-weight:600;
 
     transition:.3s;
 }
 
 .btn-proyecto:hover{
-    background:var(--blue);
+    background:#5FA8D3;
 }
-
-/* ========================= */
-/* CONTENIDO EXPANDIBLE */
-/* ========================= */
-
+/*CONTENIDO DESPLEGABLE*/
 .contenido-proyecto{
     margin-top:25px;
-    padding-top:20px;
+    padding-top:25px;
 
     border-top:1px solid rgba(0,0,0,.1);
 
@@ -369,152 +291,61 @@ body{
     }
 
 }
-
-/* ========================= */
-/* EQUIPO */
-/* ========================= */
-
+/*EQUIPO*/
 .team-card{
     text-align:center;
 }
 
 .team-photo{
-    width:140px;
-    height:140px;
+    width:160px;
+    height:160px;
 
     margin:auto;
     margin-bottom:25px;
 
     border-radius:50%;
 
-    background:linear-gradient(
-        135deg,
-        #b7d7ff,
-        #edf7ff
-    );
+    overflow:hidden;
 
-    border:5px solid var(--blue3);
+    border:5px solid #5FA8D3;
+
+    background:#A9D6FF;
+}
+
+.team-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 .cargo{
     display:block;
 
-    color:var(--blue2);
+    margin-top:10px;
 
+    color:#1B4965;
     font-weight:700;
-
-    margin-bottom:15px;
 }
-/* ========================= */
-/* DONACIONES */
-/* ========================= */
-
-.donaciones{
-    background:linear-gradient(
-        135deg,
-        #1d4f91,
-        #2d73d6
-    );
-
-    color:white;
-
-    text-align:center;
-
-    padding:120px 8%;
-}
-
-.donaciones h2{
-    font-size:55px;
-    margin-bottom:20px;
-}
-
-.donaciones p{
-    font-size:18px;
-}
-
-.donation-box{
-    margin-top:50px;
-
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-}
-
-.payment-card{
-    background:rgba(255,255,255,.15);
-
-    backdrop-filter:blur(10px);
-
-    border-radius:25px;
-
-    padding:30px;
-
-    min-width:320px;
-
-    display:flex;
-    align-items:center;
-    gap:20px;
-
-    transition:.3s;
-}
-
-.payment-card:hover{
-    transform:translateY(-6px);
-}
-
-.payment-icon{
-    width:70px;
-    height:70px;
-
-    border-radius:50%;
-
-    background:white;
-
-    color:#1d4f91;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-size:30px;
-}
-
-.nequi-icon{
-    background:#E4007C;
-    color:white;
-}
-
-/* ========================= */
-/* REDES SOCIALES */
-/* ========================= */
-
+/*REDES SOCIALES*/
 .social-section{
-    background:linear-gradient(
-        180deg,
-        #dff0ff,
-        #cfe8ff
-    );
+    background:#d9e7f5;
+
+    padding:120px 20px;
 
     text-align:center;
-
-    padding:120px 8%;
 }
 
 .social-section h2{
-    font-size:55px;
-    color:#1d4f91;
+    font-size:52px;
+    color:#14395c;
     margin-bottom:20px;
 }
 
 .social-text{
-    max-width:800px;
-
-    margin:0 auto 50px auto;
-
+    max-width:750px;
+    margin:0 auto 60px;
     line-height:1.8;
-
-    color:#35506b;
+    color:#35526f;
 }
 
 .social-links{
@@ -525,24 +356,21 @@ body{
 }
 
 .social-card{
-    width:250px;
-    min-height:220px;
+    width:220px;
+    min-height:180px;
 
-    background:#f6fbff;
+    background:#c4daf0;
 
     border-radius:30px;
-
-    padding:35px 20px;
 
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
 
-    text-decoration:none;
+    gap:20px;
 
-    box-shadow:
-    0 10px 30px rgba(29,79,145,.10);
+    text-decoration:none;
 
     transition:.3s;
 }
@@ -552,13 +380,15 @@ body{
 }
 
 .social-card svg{
-    font-size:60px;
-    margin-bottom:20px;
+    font-size:48px;
 }
 
-.social-card span{
-    font-size:22px;
-    font-weight:700;
+.social-card:hover{
+    transform:translateY(-8px);
+}
+
+.social-card svg{
+    font-size:42px;
 }
 
 .instagram{
@@ -572,49 +402,108 @@ body{
 .youtube{
     color:#FF0000;
 }
-
-/* ========================= */
-/* FOOTER */
-/* ========================= */
-
-footer{
-    background:#1d4f91;
-
-    color:white;
-
+/*DONACIONES*/
+.donaciones{
+    background: linear-gradient(135deg,#3c7aa3,#2f6287);
+    padding:120px 20px;
     text-align:center;
-
-    padding:90px 20px;
+    color:white;
 }
 
-footer h2{
-    font-size:45px;
-    margin-bottom:25px;
+.donaciones h2{
+    font-size:55px;
+    margin-bottom:20px;
 }
 
-footer p{
-    margin-top:10px;
+.donaciones > p{
+    max-width:700px;
+    margin:0 auto 60px;
     line-height:1.8;
 }
 
-/* ========================= */
-/* WHATSAPP */
-/* ========================= */
+.donation-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+    flex-wrap:wrap;
+}
 
-.whatsapp-float{
-    position:fixed;
+.payment-card{
+    width:340px;
+    min-height:160px;
 
-    right:25px;
-    bottom:25px;
+    background:rgba(255,255,255,.15);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:30px;
+
+    display:flex;
+    align-items:center;
+    gap:25px;
+
+    padding:30px;
+}
+
+.payment-icon{
 
     width:75px;
     height:75px;
 
+    flex-shrink:0;
+
     border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:white;
+
+    color:#17324d;
+
+    font-size:30px;
+}
+
+.nequi-icon{
+    background:#E4007C;
+    color:white;
+}
+/*FOOTER-CONTACTENOS*/
+footer{
+    background:#17395d;
+
+    color:white;
+
+    padding:120px 20px;
+
+    text-align:center;
+}
+
+footer h2{
+    font-size:60px;
+    margin-bottom:40px;
+}
+
+footer p{
+    line-height:2;
+    font-size:18px;
+}
+/*BOTON WHATSAPP*/
+.whatsapp-float{
+
+    position:fixed;
+
+    bottom:25px;
+    right:25px;
+
+    width:75px;
+    height:75px;
 
     background:#25D366;
 
-    color:white;
+    border-radius:50%;
 
     display:flex;
     justify-content:center;
@@ -622,47 +511,113 @@ footer p{
 
     text-decoration:none;
 
-    font-size:40px;
+    color:white;
+
+    font-size:38px;
 
     box-shadow:
-    0 12px 30px rgba(37,211,102,.35);
+    0 15px 35px rgba(0,0,0,.25);
 
-    z-index:9999;
-
-    transition:.3s;
+    z-index:999;
 }
+.copyright{
+    margin-top:40px;
+    padding-top:25px;
+    width:100%;
+    border-top:1px solid rgba(255,255,255,.15);
 
+    font-size:14px;
+    color:rgba(255,255,255,.7);
+    letter-spacing:.5px;
+}
 .whatsapp-float:hover{
-    transform:scale(1.1);
+    transform:scale(1.08);
+}
+/*QUIENES SOMOS*/
+.placeholder{
+
+    height:500px;
+
+    background:linear-gradient(
+        135deg,
+        #A9D6FF,
+        #CFE8FF
+    );
+
+    border-radius:30px;
+
+    overflow:hidden;
 }
 
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
+.placeholder img{
 
-@media(max-width:768px){
+    width:100%;
+    height:100%;
 
-    .hero{
-        min-height:auto;
+    object-fit:cover;
+}
+/*COLORES TITULOS*/
+.about-text h2,
+.title-center,
+.social-section h2{
+    color:#17324d;
+}
+/*RESPONSIVE CELULARES*/
+@media screen and (max-width:768px){
+
+    /* SECCIONES */
+
+    .section{
         padding:80px 20px;
     }
 
-    .hero h1{
-        font-size:42px;
+    /* HERO */
+
+    .hero{
+        min-height:auto;
+        padding:50px 20px 80px;
+
+        background-size:cover;
+        background-position:center top;
     }
 
-    .hero p{
-        font-size:17px;
+    .hero-content{
+        width:100%;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+
+        text-align:center;
     }
 
     .logo{
-        width:280px;
+        width:250px;
+        margin:0 auto 25px;
     }
+
+    .hero h1{
+        font-size:36px;
+        line-height:1.25;
+
+        width:100%;
+        text-align:center;
+    }
+
+    .hero p{
+        font-size:16px;
+        line-height:1.9;
+
+        max-width:100%;
+    }
+
+    /* BOTONES */
 
     .buttons{
         display:flex;
         flex-direction:column;
         align-items:center;
+        gap:15px;
     }
 
     .btn,
@@ -671,24 +626,41 @@ footer p{
         max-width:320px;
     }
 
-    .section{
-        padding:80px 6%;
-    }
+    /* QUIENES SOMOS */
 
     .about{
         grid-template-columns:1fr;
+        gap:40px;
     }
 
-    .placeholder{
-        height:280px;
+    .about-image{
+        display:flex;
+        justify-content:center;
     }
 
-    .title-center,
-    .about-text h2,
-    .donaciones h2,
-    .social-section h2{
+    .about-image img{
+        max-width:320px;
+        margin:auto;
+    }
+
+    .about-text{
+        text-align:center;
+    }
+
+    .about-text h2{
         font-size:36px;
     }
+
+    /* TITULOS */
+
+    .title-center,
+    .social-section h2,
+    .donaciones h2,
+    footer h2{
+        font-size:36px;
+    }
+
+    /* TARJETAS */
 
     .cards{
         grid-template-columns:1fr;
@@ -696,43 +668,68 @@ footer p{
 
     .card{
         padding:30px;
+        text-align:center;
     }
 
-    .payment-card{
-        min-width:100%;
+    /* EQUIPO */
+
+    .team-photo{
+        width:130px;
+        height:130px;
+    }
+
+    /* REDES */
+
+    .social-links{
         flex-direction:column;
-        text-align:center;
+        align-items:center;
     }
 
     .social-card{
         width:100%;
-        max-width:330px;
+        max-width:320px;
     }
 
-    footer h2{
-        font-size:34px;
+    /* DONACIONES */
+
+    .donation-box{
+        flex-direction:column;
+        align-items:center;
     }
+
+    .payment-card{
+        width:100%;
+        max-width:340px;
+
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .payment-icon{
+        margin:auto;
+    }
+
+    /* FOOTER */
+
+    footer{
+        padding:70px 20px;
+    }
+
+    footer p{
+        font-size:15px;
+    }
+
+    /* WHATSAPP */
 
     .whatsapp-float{
         width:65px;
         height:65px;
-        font-size:34px;
+
+        font-size:32px;
+
+        bottom:20px;
+        right:20px;
     }
-}
-.about-photo{
-    width:100%;
-    height:500px;
 
-    object-fit:cover;
-
-    border-radius:30px;
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.15);
-
-    transition:.4s;
-}
-
-.about-photo:hover{
-    transform:scale(1.02);
 }

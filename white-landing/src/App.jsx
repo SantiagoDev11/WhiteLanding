@@ -25,10 +25,6 @@ function App() {
   const [comentario, setComentario] = useState("");
   const [documentoAbierto, setDocumentoAbierto] = useState(null);
 
-const toggleDocumento = (id) => {
-  setDocumentoAbierto(documentoAbierto === id ? null : id);
-};
-
   const [listaComentarios, setListaComentarios] = useState([
     {
       id: 1,
